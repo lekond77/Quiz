@@ -42,24 +42,6 @@ const QUESTIONS = [
   },
 ];
 
-function isEqual(a, b) {
-  if (a instanceof Array && b instanceof Array) {
-    if (a.length !== b.length) {
-      return false;
-    }
-
-    for (var i = 0; i < a.length; i++) {
-      if (!isEqual(a[i], b[i])) {
-        return false;
-      }
-    }
-
-    return true;
-  }
-
-  return a === b;
-}
-
 QUESTIONS.sort(() => Math.random() - 0.2);
 let correctAnswer = [];
 let jq = $.noConflict();
