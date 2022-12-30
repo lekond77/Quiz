@@ -1,0 +1,33 @@
+body {
+  width: 40em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#quiz div {
+  border: solid 0.5px #ddeeddee;
+  font-size: 1.2em;
+  width: 32em;
+  background-color: #ddeeddee;
+  margin: 0.5em;
+  padding: 5px;
+  box-shadow: 2px 2px #555c55ee;
+}
+
+input {
+  border: #555c55ee;
+  width: 2em;
+  height: 1.5em;
+  margin: 0.3em;
+}
+h1 {
+  text-align: center;
+}
+button {
+  border: none;
+  width: 10em;
+  margin-left: 12em;
+  background-color: bisque;
+  font-size: 1.2em;
+  padding: 0.5em;
+}
