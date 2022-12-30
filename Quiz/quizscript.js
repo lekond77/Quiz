@@ -16,7 +16,7 @@ const QUESTIONS = [
     correctAnswer: "Neil Armstrong",
   },
   {
-    question: "Que font 3 + 0 * 5 - 2 ?",
+    question: "Que vaut:  3 + 0 * 5 - 2 ?",
     answers: [13, 6, 1],
     correctAnswer: 1,
   },
@@ -24,6 +24,21 @@ const QUESTIONS = [
     question: "Quel fruit a le même nom qu'un animal ?",
     answers: ["kiwi", "Murène banane", "Ascidia roja"],
     correctAnswer: "kiwi",
+  },
+  {
+    question: "Combien de minutes dure un match de rugby ?",
+    answers: [90, 75, 80],
+    correctAnswer: 80,
+  },
+  {
+    question: "Quel est le numéro de la maison des Simpson ?",
+    answers: [720, 742, 801],
+    correctAnswer: 742,
+  },
+  {
+    question: " Qui a joué Harry Potter dans Harry Potter  ?",
+    answers: ["Rupert Grint", "Alan Rickman", "Daniel Radcliffe"],
+    correctAnswer: "Daniel Radcliffe",
   },
 ];
 
@@ -45,7 +60,7 @@ function isEqual(a, b) {
   return a === b;
 }
 
-QUESTIONS.sort(() => Math.random() - 0.5);
+QUESTIONS.sort(() => Math.random() - 0.2);
 let correctAnswer = [];
 let jq = $.noConflict();
 jq(document).ready(function () {
