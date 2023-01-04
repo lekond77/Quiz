@@ -40,6 +40,11 @@ const QUESTIONS = [
     answers: ["Rupert Grint", "Alan Rickman", "Daniel Radcliffe"],
     correctAnswer: "Daniel Radcliffe",
   },
+  {
+    question: "Quelle est la capitale de la France?",
+    answers: ["Paris", "Londres", "Berlin"],
+    correctAnswer: "Paris",
+  },
 ];
 
 QUESTIONS.sort(() => Math.random() - 0.2);
@@ -57,7 +62,7 @@ jq(document).ready(function () {
       jq(`#question${i}`).append(p);
       for (j in QUESTIONS[i].answers) {
         let input = jq(
-          `<input type="radio" id="answers${i}${j}" value="${QUESTIONS[i].answers[j]}" name="answers${i}">
+          `<input type="radio" id="answers${i}${j}" value="${QUESTIONS[i].answers[j]}" name="answers${i} disabled="false"">
           <label for="answers${i}${j}">
            ${QUESTIONS[i].answers[j]}</label><br>`
         );
@@ -78,7 +83,7 @@ jq(document).ready(function () {
         .parent()
         .parent()
         .css({ border: "solid 5px green", "border-radius": "10px" });
-      jq(`#${this.id}`).siblings().attr("disabled", "true");
+      jq(`#${this.id}`).siblings("input").attr("disabled", "true");
       score += 1;
       jq("#score").text("Score: " + score);
     } else {
@@ -86,7 +91,17 @@ jq(document).ready(function () {
         .parent()
         .parent()
         .css({ border: "solid 5px red", "border-radius": "10px" });
-      jq(`#${this.id}`).siblings().attr("disabled", "true");
+      jq(`#${this.id}`).siblings("input").attr("disabled", "true");
+    }
+
+    let enabled = jq("input[type=radio]:enabled").length;
+    let checked = jq("input[type=radio]:checked").length;
+    if (enabled === checked) {
+      alert("Votre sccore est : " + score + " / " + correctAnswer.length);
+      let button = jq(
+        '<button onclick="location.reload();">Jouer de nouveau</button>'
+      );
+      jq("body").append(button);
     }
   });
 });
