@@ -4,7 +4,7 @@ body {
   margin-right: auto;
 }
 
-#quiz div {
+#question-content {
   border: solid 0.5px #ddeeddee;
   font-size: 1.2em;
   width: 32em;
@@ -12,6 +12,7 @@ body {
   margin: 0.5em;
   padding: 5px;
   box-shadow: 2px 2px #555c55ee;
+  border-radius: 10px;
 }
 
 input {
@@ -30,4 +31,7 @@ button {
   background-color: bisque;
   font-size: 1.2em;
   padding: 0.5em;
+}
+button:hover {
+  cursor: pointer;
 }
